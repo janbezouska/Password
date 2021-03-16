@@ -79,7 +79,7 @@ namespace Password
                     tbInfo.Text += "username již existuje";
                     errUnContains = true;
                 }
-                if(!errUnLenght && !errUnContains)
+                else if(!errUnLenght)
                 {
                     strUsername = value;
                     usernameSet = true;
