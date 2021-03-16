@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Password"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="350">
+        Title="MainWindow" Height="250" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5"/>
@@ -17,6 +17,7 @@
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
@@ -25,13 +26,19 @@
         <PasswordBox x:Name="pbPassword"
                      Grid.Column="2" Grid.Row="1"/>
         <TextBlock x:Name="tbInfo"
-                   Grid.Column="1" Grid.Row="3"/>
+                   Grid.Column="1" Grid.Row="4"
+                   TextWrapping="Wrap"/>
         <Button x:Name="butLogin"
                 Grid.Column="1" Grid.Row="2"
                 Content="LOGIN"
                 Click="butLogin_Click"/>
+        <Button x:Name="butSingup"
+                Grid.Column="1" Grid.Row="3"
+                Content="SINGUP"
+                Click="butSingup_Click"/>
         <Button x:Name="butEnd"
-                Grid.Row="3" Grid.Column="2"
+                Grid.Row="2" Grid.Column="2"
+                Grid.RowSpan="3"
                 Content="END PROGRAM"
                 Background="Red"
                 Visibility="Hidden"
