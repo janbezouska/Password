@@ -28,7 +28,7 @@ namespace Password
                 errPassNum = false;
                 tbInfo.Foreground = Brushes.Red;
 
-                if (!(value.Length > 5) | !Regex.IsMatch(value, @".*[0-9]+.*"))
+                if (!(value.Length > 5))
                 {
                     tbInfo.Text = "Heslo je moc krátké";
                     errPassLenght = true;
@@ -40,7 +40,7 @@ namespace Password
                     tbInfo.Text += "Heslo neobsahuje číslici";
                     errPassNum = true;
                 }
-                if(!(errPassNum | errPassLenght))
+                else if(!errPassLenght)
                 {
                     strPassword = value;
                     passwordSet = true;
@@ -52,7 +52,6 @@ namespace Password
         }
 
         bool usernameSet = false;
-        bool errUnContains = false;
         bool errUnLenght = false;
         private string strUsername;
         public string Username
@@ -60,8 +59,7 @@ namespace Password
             get { return strUsername; }
             set
             {
-                bool errUnContains = false;
-                bool errUnLenght = false;
+                errUnLenght = false;
 
                 if (!(value.Length > 2))
                 {
@@ -77,7 +75,6 @@ namespace Password
                     if (errPassLenght | errPassNum | errUnLenght)
                         tbInfo.Text += "\n";
                     tbInfo.Text += "username již existuje";
-                    errUnContains = true;
                 }
                 else if(!errUnLenght)
                 {
